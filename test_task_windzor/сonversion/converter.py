@@ -30,10 +30,10 @@ class FromGoogleCSVtoJSON:
         values = data[1]
         needed_keys = list(set(self.fields) & set(keys))
 
-        for i in values:
+        for ls in values:
             dicts = {}
             for key in needed_keys:
-                dicts[keys[keys.index(key)]] = i[keys.index(key)]
+                dicts[keys[keys.index(key)]] = ls[keys.index(key)]
             result['data'].append(dicts)
         return result
 
