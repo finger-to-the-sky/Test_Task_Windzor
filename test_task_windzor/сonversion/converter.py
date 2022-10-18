@@ -28,12 +28,12 @@ class FromGoogleCSVtoJSON:
         keys = data[0]
         result = {'data': []}
         values = data[1]
-        other = list(set(self.fields) & set(keys))
+        needed_keys = list(set(self.fields) & set(keys))
 
         for i in values:
             dicts = {}
-            for j in other:
-                dicts[keys[keys.index(j)]] = i[keys.index(j)]
+            for key in needed_keys:
+                dicts[keys[keys.index(key)]] = i[keys.index(key)]
             result['data'].append(dicts)
         return result
 
