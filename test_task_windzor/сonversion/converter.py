@@ -19,7 +19,7 @@ class FromGoogleCSVtoJSON:
 
             return (list(df.keys()), df.values)
         except Exception:
-            print('Неверно введен URL')
+            print('Wrong URL entered')
             sys.exit(44)
 
     def take_data(self):
